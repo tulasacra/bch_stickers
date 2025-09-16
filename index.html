@@ -7,6 +7,7 @@
     <style>
         body { font-family: Arial, sans-serif; text-align: center; }
         h1, h2 { color: #333; }
+        h2 a { color: inherit; text-decoration: none; }
         img { 
             max-width: 300px;
             max-height: 200px;
@@ -39,19 +40,19 @@
     <img src="stickers/branding/bch_mosaic.png" alt="logo">
     <img src="stickers/branding/use bch.webp" alt="symbol, ticker, vibe">
     <img src="stickers/branding/p2p cash W 5x4.png" alt="name">
-    <h2>Mission</h2>
+    <h2 id="mission"><a href="#mission">Mission</a></h2>
     <img src="stickers/mission/political solution B 2x3.png" class="tall">
     <img src="stickers/mission/make war unaffordable 3x2.png">
     <img src="stickers/mission/stop wars.png">
     <img src="stickers/mission/stop wars sw 16x9.png">
     <img src="stickers/mission/peace love anarchy 2.png">
-    <h2>Products</h2>
+    <h2 id="products"><a href="#products">Products</a></h2>
     <img src="stickers/products/afog 2x1.png">
     <img src="stickers/products/anyhedge 2x1.png">
     <img src="stickers/products/moria bill light.png">
     <img src="stickers/products/fundme2 3x2.png">
     <img src="stickers/products/fusion 3x2.jpg">    
-    <h2>Call to action</h2>
+    <h2 id="action"><a href="#action">Call to action</a></h2>
     <img src="stickers/action/hijacking corner 2x3.png" class="tall">
     <img src="stickers/action/bliss outline.png">
     <img src="stickers/action/B TheChange crop.png">
@@ -59,5 +60,16 @@
     <div><a href="https://stickers.cash/">stickers.cash</a></div>
     <div><a href="https://minisatoshi.cash/resources">minisatoshi.cash</a></div>
     <div><a href="https://www.bitrequest.io/map/">bitrequest.io</a> (free stickers if you add a venue)</div>
+    <script>
+        (function () {
+            var hash = String(window.location.hash || '').toLowerCase().replace(/^#/, '');
+            if (hash === 'products' || hash === 'mission' || hash === 'action') {
+                var el = document.getElementById(hash);
+                if (el && typeof el.scrollIntoView === 'function') {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        })();
+    </script>
 </body>
 </html>
